@@ -32,6 +32,10 @@ Un programa en Python que simula un sistema de robots de limpieza reactivos oper
 
 - **Python 3.x**: El programa utiliza características de Python 3, por lo que es necesario tenerlo instalado.
 
+## NOTA ADICIONAL:
+
+Para más detalles sobre la simulación y sus resultados, consulta el archivo [`report.md`](./report.md).
+
 ## Integrantes
 
 - **Pedro Ruiz de la Peña Gaytan** - [A01562734]
