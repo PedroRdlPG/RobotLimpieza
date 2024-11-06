@@ -36,7 +36,7 @@ Se ha desarrollado una simulación de robots de limpieza reactivos que operan en
   - **Función**: Permite la creación y gestión de hilos (threads) para ejecutar tareas concurrentemente.
   - **Uso en el código**:
     - **`threading.Thread`**: Cada agente de limpieza es un hilo independiente que hereda de esta clase.
-    - **`threading.Lock`**: Se utiliza para sincronizar el acceso a recursos compartidos (la habitación y las posiciones de los agentes) y evitar condiciones de carrera.
+    - **`threading.Lock`**: Se utiliza como un "candado global" que los agentes se turnan para acceder de forma segura a los datos compartidos de la habitación y sus posiciones. Este `lock` evita que dos agentes accedan a la misma casilla al mismo tiempo, evitando conflictos de acceso simultáneo.
 
 - **`time`**:
   - **Función**: Proporciona funciones relacionadas con el manejo del tiempo.
@@ -79,7 +79,7 @@ C C C C C C C C C C
 
 - Los agentes lograron limpiar el 100% de las celdas sucias en un tiempo significativamente menor al tiempo máximo permitido.
 - El número total de movimientos realizados indica que los agentes exploraron eficientemente el entorno.
-- La impresión del estado final de la habitación muestra que todas las celdas están limpias (`C` representa una celda limpia).
+- La impresión del estado final de la habitación muestra que todas las celdas están limpias (`C` representa una celda limpia y `D` una celda sucia).
 
 ## Análisis de Resultados
 
@@ -88,12 +88,12 @@ C C C C C C C C C C
   - Al aumentar el número de agentes, el tiempo de limpieza puede reducirse, pero también aumenta la posibilidad de que los agentes interfieran entre sí si no se maneja adecuadamente la sincronización.
 
 - **Eficiencia y Colaboración Implícita**:
-  - Aunque los agentes no se comunican entre sí, la implementación de mecanismos de sincronización evita conflictos y permite que trabajen de manera eficiente.
+  - Aunque los agentes no se comunican entre sí, la implementación de un `lock` global garantiza que los agentes trabajen de manera segura y eviten colisiones, como intentar limpiar la misma casilla al mismo tiempo.
   - Los agentes evitan moverse a celdas ocupadas por otros agentes, lo que reduce la redundancia en sus movimientos.
 
 ## Conclusiones
 
-- **Sincronización Exitosa**: El uso de `threading.Lock` ha sido efectivo para evitar condiciones de carrera y asegurar que los agentes interactúen con el entorno de manera segura.
+- **Sincronización Exitosa**: El uso de `threading.Lock` ha sido efectivo para evitar conflictos de acceso simultáneo y asegurar que los agentes interactúen con el entorno de manera segura.
 - **Eficiencia del Sistema Multiagente**: El sistema demuestra que es posible lograr una limpieza completa de manera eficiente con múltiples agentes, siempre que se maneje adecuadamente la sincronización y el acceso a recursos compartidos.
 - **Potencial de Mejora**:
   - **Estrategias de Movimiento**: Implementar estrategias más inteligentes podría reducir el número de movimientos necesarios y el tiempo total de limpieza.
@@ -108,3 +108,4 @@ C C C C C C C C C C
 
 - **Pedro Ruiz de la Peña Gaytan** - [A01562734]
 - **Gilberto Alejandro Cordero Nuñez** - [A01562929]
+- 

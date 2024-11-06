@@ -1,7 +1,7 @@
 import time
 from room import Room
-from agent import CleaningAgent  # Corrección aquí
-from config import NUM_AGENTS, MAX_TIME  # Corrección aquí
+from agent import CleaningAgent
+from config import NUM_AGENTS, MAX_TIME
 
 def main():
     room = Room()
