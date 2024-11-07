@@ -104,6 +104,7 @@ C C C C C C C C C C
 - **Pruebas Adicionales**: Realizar simulaciones con diferentes números de agentes y porcentajes de suciedad para analizar el impacto en el rendimiento.
 - **Optimización**: Explorar algoritmos de movimiento más sofisticados, como búsqueda sistemática o patrones predefinidos, para mejorar la cobertura del espacio.
 
-## Integrante
+## Integrantes
 
 - **Pedro Ruiz de la Peña Gaytan** - [A01562734]
+- **Gilberto Alejandro Cordero Nuñez** - [A01562929]
