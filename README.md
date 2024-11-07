@@ -39,4 +39,3 @@ Para más detalles sobre la simulación y sus resultados, consulta el archivo [`
 ## Integrantes
 
 - **Pedro Ruiz de la Peña Gaytan** - [A01562734]
-- **Gilberto Alejandro Cordero Nuñez** - [A01562929]
