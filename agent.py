@@ -3,7 +3,7 @@ import random
 import time
 from config import MAX_TIME
 
-class CleaningAgent(threading.Thread):
+class CleaningAgent(threading.Thread): #Función para inicializar agentes y sus atributos
     def __init__(self, agent_id, room, start_time, agents_positions):
         threading.Thread.__init__(self)
         self.agent_id = agent_id  # Identificador único para cada agente

@@ -26,11 +26,9 @@ def main():
                 break
             time.sleep(1)
     except KeyboardInterrupt:
-        # Permitir detener la simulación con Ctrl+C
         for agent in agents:
             agent.running = False
 
-    # Esperar a que todos los agentes terminen
     for agent in agents:
         agent.join()
 
@@ -45,7 +43,7 @@ def main():
     print(f"Porcentaje de celdas limpias: {clean_percentage:.2f}%")
     print(f"Número total de movimientos realizados: {total_moves}")
 
-    # Opcional: Mostrar estado final de la habitación
+    # Mostrar estado final de la habitación
     room.print_room()
 
 if __name__ == "__main__":

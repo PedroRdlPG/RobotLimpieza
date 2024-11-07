@@ -4,13 +4,13 @@ import threading
 
 class Room:
     def __init__(self):
-        self.rows, self.cols = ROOM_DIMENSIONS  # Dimensiones de la habitación
+        self.rows, self.cols = ROOM_DIMENSIONS  
         # Crear una matriz para representar la habitación (0: limpio, 1: sucio)
         self.grid = [[0 for _ in range(self.cols)] for _ in range(self.rows)]
-        self.lock = threading.Lock()  # Lock para sincronización
-        self.initialize_dirt()  # Inicializar las celdas sucias
+        self.lock = threading.Lock()  # Mutex para controlar la leida de la celda por agente
+        self.initialize_dirt()  
 
-    def initialize_dirt(self):
+    def initialize_dirt(self): # Función para inicializar las celdas sucias
         total_cells = self.rows * self.cols
         dirt_cells = int((DIRT_PERCENTAGE / 100) * total_cells)
         cells = [(i, j) for i in range(self.rows) for j in range(self.cols)]
@@ -32,7 +32,7 @@ class Room:
         with self.lock:
             for row in self.grid:
                 if 1 in row:
-                    return False  # Hay al menos una celda sucia
+                    return False  # Si hay al menos una celda sucia
             return True  # Todas las celdas están limpias
 
     def get_dimensions(self):

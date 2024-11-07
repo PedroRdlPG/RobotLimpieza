@@ -9,7 +9,7 @@ Se ha desarrollado una simulación de robots de limpieza reactivos que operan en
 - Evaluar cómo la cantidad de agentes afecta el tiempo necesario para limpiar la habitación y el número total de movimientos realizados.
 - Analizar la eficiencia del sistema en términos de colaboración entre agentes (aunque no se comuniquen entre sí) y su efecto en el tiempo de limpieza.
 
-## Configuración de la Simulación
+## Configuración de la Simulación 
 
 - **Dimensiones de la habitación**: 10 x 10 celdas.
 - **Número de agentes**: 5.
@@ -20,11 +20,11 @@ Se ha desarrollado una simulación de robots de limpieza reactivos que operan en
 
 - **`config.py`**:
   - **Función**: Módulo propio que contiene los parámetros de configuración de la simulación.
-  - **Uso en el código**: Proporciona valores como las dimensiones de la habitación, el número de agentes, el porcentaje de suciedad y el tiempo máximo de ejecución.
+  - **Uso en el código**: Aquí podemos establecer valores como las dimensiones de la habitación, el número de agentes, el porcentaje de suciedad y el tiempo máximo de ejecución.
 
 - **`room.py`**:
-  - **Función**: Define la estructura de la habitación y las celdas sucias.
-  - **Uso en el código**: Crea y maneja la matriz que representa la habitación y su estado (celdas limpias o sucias).
+  - **Función**: Define las dimensiones y las celdas sucias.
+  - **Uso en el código**: Crea y maneja aleatoriamente la matriz que representa la habitación y su estado (celdas limpias o sucias).
 
 - **`agent.py`**:
   - **Función**: Define la clase `CleaningAgent`, que representa a un agente de limpieza con comportamiento reactivo.
@@ -50,30 +50,7 @@ Se ha desarrollado una simulación de robots de limpieza reactivos que operan en
     - **Inicialización aleatoria**: Distribuir las celdas sucias al inicio de la simulación.
     - **Movimientos aleatorios**: Determinar la dirección en la que se moverá un agente cuando la celda actual esté limpia.
 
-Todas estas librerías son parte de la **biblioteca estándar de Python**, por lo que no se requiere la instalación de paquetes externos.
 
-## Resultados
-
-### Ejecución con 5 Agentes
-
-- **Tiempo total de simulación**: **20.16 segundos**.
-- **Porcentaje de celdas limpias**: **100.00%**.
-- **Número total de movimientos realizados**: **934**.
-
-**Estado final de la habitación**:
-
-```
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-C C C C C C C C C C
-```
 
 ### Observaciones
 
@@ -108,4 +85,3 @@ C C C C C C C C C C
 
 - **Pedro Ruiz de la Peña Gaytan** - [A01562734]
 - **Gilberto Alejandro Cordero Nuñez** - [A01562929]
-- 
